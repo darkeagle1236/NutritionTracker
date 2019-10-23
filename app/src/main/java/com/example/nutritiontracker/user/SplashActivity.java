@@ -11,11 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.nutritiontracker.activity.MainActivity;
 
-/**
- * Created by ssaurel on 02/12/2016.
- */
 public class SplashActivity extends AppCompatActivity implements UserContract.View {
-    private final int SPLASH_DISPLAY_LENGTH = 3000;
+    private final int SPLASH_DISPLAY_LENGTH = 1500;
     private UserContract.Presenter presenter;
     Intent mainIntent;
     @Override

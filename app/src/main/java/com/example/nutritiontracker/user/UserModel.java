@@ -4,7 +4,9 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
+import com.example.nutritiontracker.add.AdditionContract;
 import com.example.nutritiontracker.database.DatabaseHelper;
 
 import java.util.ArrayList;
@@ -22,6 +24,10 @@ public class UserModel implements UserContract.Model {
     private SQLiteDatabase sqLiteDatabase;
     private DatabaseHelper databaseHelper;
     public UserModel(UserContract.View view){
+        databaseHelper = new DatabaseHelper((Context) view);
+        sqLiteDatabase = databaseHelper.getWritableDatabase();
+    }
+    public UserModel(AdditionContract.View view){
         databaseHelper = new DatabaseHelper((Context) view);
         sqLiteDatabase = databaseHelper.getWritableDatabase();
     }

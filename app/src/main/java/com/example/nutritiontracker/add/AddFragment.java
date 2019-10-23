@@ -11,11 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.nutritiontracker.R;
-import com.example.nutritiontracker.food.Food;
+import com.example.nutritiontracker.add.addexercise.AddExcerciseActivity;
+import com.example.nutritiontracker.add.addfood.AddFoodActivity;
 
-import java.util.List;
-
-public class AddFragment extends Fragment implements AdditionContract.View {
+public class AddFragment extends Fragment {
     Button btnFood,btnExercise;
     @Nullable
     @Override
@@ -31,54 +30,16 @@ public class AddFragment extends Fragment implements AdditionContract.View {
         btnFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),AddFoodActivity.class);
+                Intent intent = new Intent(view.getContext(), AddFoodActivity.class);
                 startActivity(intent);
             }
         });
         btnExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(),AddExcerciseActivity.class);
+                Intent intent = new Intent(view.getContext(), AddExcerciseActivity.class);
                 startActivity(intent);
             }
         });
-    }
-    private void initRecyclerView(){
-
-    }
-
-    @Override
-    public void clearAllItem() {
-
-    }
-
-    @Override
-    public String getQuery() {
-        return null;
-    }
-
-    @Override
-    public void initUI() {
-
-    }
-
-    @Override
-    public void setDataToRecyclerView(List<Food> foodList) {
-
-    }
-
-    @Override
-    public void showProgress() {
-
-    }
-
-    @Override
-    public void hideProgress() {
-
-    }
-
-    @Override
-    public void startMainActivity() {
-
     }
 }

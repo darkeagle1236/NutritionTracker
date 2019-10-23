@@ -1,4 +1,4 @@
-package com.example.nutritiontracker.add;
+package com.example.nutritiontracker.add.addfood;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -44,7 +44,7 @@ public class AddFoodAdapter extends RecyclerView.Adapter<AddFoodAdapter.CustomVi
     @Override
     public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.item_food, parent, false);
+        View view = layoutInflater.inflate(R.layout.item_food_horizontal, parent, false);
         return new CustomViewHolder(view);
     }
 

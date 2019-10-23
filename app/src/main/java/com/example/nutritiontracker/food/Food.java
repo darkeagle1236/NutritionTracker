@@ -145,7 +145,7 @@ public class Food {
         return servingWeightGrams;
     }
 
-    public void setServingWeightGrams(Integer servingWeightGrams) {
+    public void setServingWeightGrams(double servingWeightGrams) {
         this.servingWeightGrams = servingWeightGrams;
     }
 
