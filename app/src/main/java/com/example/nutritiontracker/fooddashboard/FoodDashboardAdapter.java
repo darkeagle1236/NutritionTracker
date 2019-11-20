@@ -1,6 +1,8 @@
 package com.example.nutritiontracker.fooddashboard;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nutritiontracker.R;
 import com.example.nutritiontracker.food.Food;
+import com.example.nutritiontracker.fooddetail.FoodDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -49,7 +52,7 @@ public class FoodDashboardAdapter extends RecyclerView.Adapter<FoodDashboardAdap
     }
 
     @Override
-    public void onBindViewHolder(CustomViewHolder holder, int position) {
+    public void onBindViewHolder(final CustomViewHolder holder, int position) {
         holder.tvFoodName.setText(foodList.get(position).getFoodName());
         Picasso.get()
                 .load(foodList.get(position).getPhoto().getThumb())
@@ -57,6 +60,29 @@ public class FoodDashboardAdapter extends RecyclerView.Adapter<FoodDashboardAdap
         holder.tvUnit.setText("Unit : "+foodList.get(position).getServingUnit());
         holder.tvQuantity.setText("Quantity : "+foodList.get(position).getServingQty().toString()+" | ");
         holder.tvCalories.setText("Calories : "+foodList.get(position).getNfCalories().toString());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, FoodDetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("foodname",foodList.get(holder.getAdapterPosition()).getFoodName());
+                bundle.putString("calories",foodList.get(holder.getAdapterPosition()).getNfCalories().toString());
+                bundle.putString("quantity",foodList.get(holder.getAdapterPosition()).getServingQty().toString());
+                bundle.putString("unit", foodList.get(holder.getAdapterPosition()).getServingUnit());
+                bundle.putString("weight",foodList.get(holder.getAdapterPosition()).getServingWeightGrams().toString());
+                bundle.putString("choresterol",foodList.get(holder.getAdapterPosition()).getNfCholesterol().toString());
+                bundle.putString("dietaryfiber",foodList.get(holder.getAdapterPosition()).getNfDietaryFiber().toString());
+                bundle.putString("totalfat",foodList.get(holder.getAdapterPosition()).getNfTotalFat().toString());
+                bundle.putString("saturatedfat",foodList.get(holder.getAdapterPosition()).getNfSaturatedFat().toString());
+                bundle.putString("sodium",foodList.get(holder.getAdapterPosition()).getNfSodium().toString());
+                bundle.putString("sugars",foodList.get(holder.getAdapterPosition()).getNfSugars().toString());
+                bundle.putString("protein",foodList.get(holder.getAdapterPosition()).getNfProtein().toString());
+                bundle.putString("totalcarbonhydrate",foodList.get(holder.getAdapterPosition()).getNfTotalCarbohydrate().toString());
+                bundle.putString("imageurl",foodList.get(holder.getAdapterPosition()).getPhoto().getHighres());
+                intent.putExtra("bundle",bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -7,8 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.nutritiontracker.add.AdditionContract;
 import com.example.nutritiontracker.database.DatabaseHelper;
-import com.example.nutritiontracker.food.Food;
-import com.example.nutritiontracker.food.Photo;
 import com.example.nutritiontracker.network.GetDataService;
 import com.example.nutritiontracker.network.RetrofitClientInstance;
 import com.example.nutritiontracker.user.User;

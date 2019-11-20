@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.FoodDetailActivity">
+    tools:context=".fooddetail.FoodDetailActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivIcon"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintBottom_toBottomOf="@id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,4 +22,115 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.3" />
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="510dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivIcon"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="NAME"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Calories"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unit"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight in grams"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvTotalFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Fat"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSaturatedFat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SaturatedFat"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvChoresterol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choresterol"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSodium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sodium"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvTotalCarbonhydrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TotalCarbonhydrate"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvDietaryFiber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DietaryFiber"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvSugars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sugars"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvProtein"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Protein"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

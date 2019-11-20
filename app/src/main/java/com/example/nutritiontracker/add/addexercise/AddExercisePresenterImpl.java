@@ -5,7 +5,6 @@ import android.content.Context;
 import com.example.nutritiontracker.add.AdditionContract;
 import com.example.nutritiontracker.exercise.Exercise;
 import com.example.nutritiontracker.exercise.ExerciseModel;
-import com.example.nutritiontracker.food.Food;
 import com.example.nutritiontracker.user.UserContract;
 import com.example.nutritiontracker.user.UserModel;
 
@@ -24,7 +23,9 @@ public class AddExercisePresenterImpl implements AdditionContract.Presenter.Exer
 
     @Override
     public void onFinished(List<Exercise> exerciseList) {
+        iView.clearAllItem();
         iView.setExerciseDataToRecyclerView(exerciseList);
+        iView.hideProgress();
     }
 
     @Override
@@ -43,11 +44,21 @@ public class AddExercisePresenterImpl implements AdditionContract.Presenter.Exer
 
     @Override
     public void onFailure(Throwable t) {
-
+        iView.displayErrorMsg(t.getMessage());
+        iView.hideProgress();
     }
 
     @Override
     public void onError(int errorCode) {
-
+        if(errorCode==404){
+            iView.displayErrorMsg("Not found your exercise. Please try again !");
+        }
+        else if(errorCode == 400){
+            iView.displayErrorMsg("Bad request. Check your internet connection");
+        }
+        else {
+            iView.displayErrorMsg("Unknown error. Restarting the app may helps");
+        }
+        iView.hideProgress();
     }
 }

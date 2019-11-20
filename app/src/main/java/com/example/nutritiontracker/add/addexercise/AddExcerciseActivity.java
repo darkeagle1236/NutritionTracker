@@ -44,7 +44,7 @@ public class AddExcerciseActivity extends AppCompatActivity implements AdditionC
 
     @Override
     public void clearAllItem() {
-
+        exerciseList.clear();
     }
 
     @Override
@@ -106,6 +106,7 @@ public class AddExcerciseActivity extends AppCompatActivity implements AdditionC
     @Override
     public void hideProgress() {
         pbLoading.setVisibility(View.GONE);
+        cdvExerciseList.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -117,6 +118,7 @@ public class AddExcerciseActivity extends AppCompatActivity implements AdditionC
 
     @Override
     public void displayErrorMsg(String errMsg) {
-
+        tvErrorMsg.setText(errMsg);
+        tvErrorMsg.setVisibility(View.VISIBLE);
     }
 }

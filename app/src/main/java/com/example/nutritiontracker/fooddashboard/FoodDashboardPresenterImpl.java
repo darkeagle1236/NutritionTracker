@@ -2,12 +2,9 @@ package com.example.nutritiontracker.fooddashboard;
 
 import com.example.nutritiontracker.food.Food;
 import com.example.nutritiontracker.food.FoodModel;
-import com.example.nutritiontracker.user.UserModel;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class FoodDashboardPresenterImpl implements FoodDashboardContract.Presenter {
