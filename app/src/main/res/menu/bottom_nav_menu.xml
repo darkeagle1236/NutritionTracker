@@ -2,11 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/layout"
+        android:title="DASHBOARD" />
+    <item
+        android:id="@+id/navigation_food"
         android:icon="@drawable/dish"
         android:title="FOOD" />
+
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_exercise"
+        android:icon="@drawable/running"
+        android:title="EXERCISE" />
+    <item
+        android:id="@+id/navigation_add"
         android:width="100dp"
         android:height="100dp"
         android:title="ADD"
@@ -17,9 +26,5 @@
 
         </shape>
     </item>
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/running"
-        android:title="EXERCISE" />
 
 </menu>

@@ -21,14 +21,15 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                R.id.navigation_food, R.id.navigation_dashboard, R.id.navigation_exercise)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
         if(getIntent().hasExtra("des_fragment")){
-            navController.navigate(R.id.navigation_notifications);
+            navController.navigate(R.id.navigation_exercise);
         }
+        navController.navigate(R.id.navigation_dashboard);
     }
 
 

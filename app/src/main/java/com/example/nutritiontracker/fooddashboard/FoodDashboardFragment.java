@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nutritiontracker.R;
-import com.example.nutritiontracker.add.addfood.AddFoodAdapter;
 import com.example.nutritiontracker.food.Food;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class FoodDashboardFragment extends Fragment implements FoodDashboardCont
         foodList = new ArrayList<>();
         rclvFood = view.findViewById(R.id.rclvFood);
         adapter = new FoodDashboardAdapter(view.getContext(), foodList);
-        mLayoutManager = new LinearLayoutManager(view.getContext());
+        mLayoutManager = new LinearLayoutManager(view.getContext(),RecyclerView.HORIZONTAL,false);
         rclvFood.setLayoutManager(mLayoutManager);
         rclvFood.setItemAnimator(new DefaultItemAnimator());
         rclvFood.setAdapter(adapter);

@@ -80,7 +80,7 @@ public class FoodModel implements AdditionContract.Model.FoodModel, FoodDashboar
 
     @Override
     public List<Food> getFoodListFromDbByDate() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-DD");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String date = simpleDateFormat.format(new Date());
         String whereClause = "datetime = ?";
         String[] whereArgs = {date};
@@ -115,8 +115,9 @@ public class FoodModel implements AdditionContract.Model.FoodModel, FoodDashboar
 
     @Override
     public int insertFood(Food food){
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-DD");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String date = simpleDateFormat.format(new Date());
+        System.out.println("dateeeeeee"+date);
         ContentValues values = new ContentValues();
         values.put("foodname",food.getFoodName());
         values.put("quantity",food.getServingQty());

@@ -14,11 +14,12 @@ import java.util.List;
 public class UserModel implements UserContract.Model {
     public static final String TABLE_NAME = "USER";
     public static final String CREATE_TABLE_USER = "CREATE TABLE [USER] (\n" +
-            "[id] INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
+            "[id] INTEGER  PRIMARY KEY AUTOINCREMENT NOT NULL,\n" +
             "[gender] NVARCHAR(50)  NULL,\n" +
             "[weight] NVARCHAR(50)  NULL,\n" +
             "[height] NVARCHAR(50)  NULL,\n" +
-            "[age] INTEGER  NULL\n" +
+            "[age] INTEGER  NULL,\n" +
+            "[username] NVARCHAR(255)  NULL\n" +
             ")";
     private SQLiteDatabase sqLiteDatabase;
     private DatabaseHelper databaseHelper;
@@ -42,6 +43,8 @@ public class UserModel implements UserContract.Model {
         values.put("height",user.getHeight());
 
         values.put("age",user.getAge());
+
+        values.put("username",user.getUsername());
         if(sqLiteDatabase.insert(TABLE_NAME,null,values)<0){
             return -1;
         }
@@ -62,6 +65,7 @@ public class UserModel implements UserContract.Model {
             user.setWeight(cursor.getString(2));
             user.setHeight(cursor.getString(3));
             user.setAge(cursor.getString(4));
+            user.setUsername(cursor.getString(5));
             list.add(user);
             cursor.moveToNext();
         }

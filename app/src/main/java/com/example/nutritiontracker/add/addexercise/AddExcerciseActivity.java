@@ -112,7 +112,7 @@ public class AddExcerciseActivity extends AppCompatActivity implements AdditionC
     @Override
     public void startMainActivity() {
         Intent intent = new Intent(AddExcerciseActivity.this, MainActivity.class);
-        intent.putExtra("des_fragment",R.id.navigation_notifications);
+        intent.putExtra("des_fragment",R.id.navigation_exercise);
         startActivity(intent);
     }
 

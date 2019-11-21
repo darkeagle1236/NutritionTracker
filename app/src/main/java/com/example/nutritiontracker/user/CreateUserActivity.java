@@ -54,7 +54,7 @@ public class CreateUserActivity extends AppCompatActivity implements UserContrac
 
     @Override
     public User getUserInfo() {
-        return new User("1",spnGender.getSelectedItem().toString(),edtWeight.getText().toString(),edtHeight.getText().toString(),edtAge.getText().toString());
+        return new User("1",spnGender.getSelectedItem().toString(),edtWeight.getText().toString(),edtHeight.getText().toString(),edtAge.getText().toString(), edtName.getText().toString());
     }
 
     @Override
