@@ -10,6 +10,7 @@ public interface FoodDashboardContract {
     interface Model{
         List<Food> getFoodListFromDb();
         List<Food> getFoodListFromDbByDate();
+        void deleteFood(Food food);
     }
     interface View{
         Context getContext();

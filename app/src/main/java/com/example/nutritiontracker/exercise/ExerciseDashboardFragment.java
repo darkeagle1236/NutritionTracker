@@ -1,6 +1,7 @@
 package com.example.nutritiontracker.exercise;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.nutritiontracker.R;
+import com.example.nutritiontracker.add.addexercise.AddExcerciseActivity;
+import com.example.nutritiontracker.add.addfood.AddFoodActivity;
 import com.example.nutritiontracker.fooddashboard.FoodDashboardAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +29,8 @@ public class ExerciseDashboardFragment extends Fragment implements ExerciseDashb
     ExerciseDashboardAdapter adapter;
     RecyclerView.LayoutManager mLayoutManager;
     List<Exercise> exerciseList;
-    TextView tvCalories;
+    TextView tvCalories;;
+    FloatingActionButton fab;
     ExerciseDashboardContract.Presenter presenter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -48,7 +53,15 @@ public class ExerciseDashboardFragment extends Fragment implements ExerciseDashb
         rclvExercise.setLayoutManager(mLayoutManager);
         rclvExercise.setItemAnimator(new DefaultItemAnimator());
         rclvExercise.setAdapter(adapter);
-        tvCalories = view.findViewById(R.id.tvCalories);
+        tvCalories = view.findViewById(R.id.tvCalories);fab = (FloatingActionButton)  view.findViewById(R.id.floatingActionButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Click action
+                Intent intent = new Intent(context, AddExcerciseActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

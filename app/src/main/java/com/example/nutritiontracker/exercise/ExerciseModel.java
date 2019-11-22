@@ -38,7 +38,7 @@ public class ExerciseModel implements AdditionContract.Model.ExerciseModel, Exer
     }
     @Override
     public int insertExercise(Exercise exercise) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-DD");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String date = simpleDateFormat.format(new Date());
         ContentValues values = new ContentValues();
         values.put("userinput",exercise.getUserInput());
@@ -83,7 +83,7 @@ public class ExerciseModel implements AdditionContract.Model.ExerciseModel, Exer
 
     @Override
     public List<Exercise> getExerciseListFromDbByDate() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-DD");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String date = simpleDateFormat.format(new Date());
         String whereClause = "datetime = ?";
         String[] whereArgs = {date};

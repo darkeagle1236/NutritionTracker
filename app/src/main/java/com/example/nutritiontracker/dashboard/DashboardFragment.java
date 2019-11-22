@@ -19,8 +19,9 @@ public class DashboardFragment extends Fragment implements DashboardContract.Vie
     Context context;
     TextView tvBMIScore,tvBMIDes,tvTodayAddedCalories,tvThisMonthAddedCalories,tvTodayBurnedCalories,tvThisMonthBurnedCalories,tvUsername;
     DashboardContract.Presenter presenter;
+    NumberFormat  formatter = new DecimalFormat("#0.00");
     public DashboardFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -48,13 +49,24 @@ public class DashboardFragment extends Fragment implements DashboardContract.Vie
 
     @Override
     public void setTodayAddedCalories() {
-        tvTodayAddedCalories.setText(presenter.initAddedCaloriesToday()+" calories");
+        tvTodayAddedCalories.setText(formatter.format(Double.parseDouble(presenter.initAddedCaloriesToday()))+" calories");
     }
 
     @Override
     public void setThisMonthAddedCalories() {
-        tvThisMonthAddedCalories.setText("This month : "+presenter.initAddedCaloriesThisMonth()+" calories");
+        tvThisMonthAddedCalories.setText("This month : "+formatter.format(Double.parseDouble(presenter.initAddedCaloriesThisMonth()))+" calories");
     }
+
+    @Override
+    public void setTodayBurnedCalories() {
+        tvTodayBurnedCalories.setText(formatter.format(Double.parseDouble(presenter.initBurnedCaloriesToday()))+" calories");
+    }
+
+    @Override
+    public void setThisMonthBurnedCalories() {
+        tvThisMonthBurnedCalories.setText("This month : "+formatter.format(Double.parseDouble(presenter.initBurnedCaloriesThisMonth()))+" calories");
+    }
+
     @Override
     public void initUI(View view) {
         tvBMIScore = view.findViewById(R.id.tvBMIScore);
@@ -69,6 +81,8 @@ public class DashboardFragment extends Fragment implements DashboardContract.Vie
         setTodayAddedCalories();
         setThisMonthAddedCalories();
         setUsername();
+        setThisMonthBurnedCalories();
+        setTodayBurnedCalories();
     }
     @Override
     public Context getContext(){
@@ -77,7 +91,6 @@ public class DashboardFragment extends Fragment implements DashboardContract.Vie
 
     @Override
     public void setBMIScore() {
-        NumberFormat formatter = new DecimalFormat("#0.00");
         tvBMIScore.setText(formatter.format(presenter.calculateBMIScore())+"");
     }
 

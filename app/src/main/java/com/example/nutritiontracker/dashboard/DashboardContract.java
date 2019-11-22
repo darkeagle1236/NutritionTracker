@@ -7,6 +7,8 @@ public interface DashboardContract {
          String getUsername();
          double getTodayAddedCalories();
          double getThisMonthAddedCalories();
+         double getTodayBurnedCalories();
+         double getThisMonthBurnedCalories();
          double getHeight();
          double getWeight();
     }
@@ -14,6 +16,8 @@ public interface DashboardContract {
          void setUsername();
          void setTodayAddedCalories();
          void setThisMonthAddedCalories();
+         void setTodayBurnedCalories();
+         void setThisMonthBurnedCalories();
          void initUI(android.view.View view);
          Context getContext();
          void setBMIScore();
@@ -24,6 +28,8 @@ public interface DashboardContract {
          String initUsername();
          String initAddedCaloriesToday();
          String initAddedCaloriesThisMonth();
+         String initBurnedCaloriesToday();
+         String initBurnedCaloriesThisMonth();
          String initBurnedCalories();
          String initBMIInfo();
     }

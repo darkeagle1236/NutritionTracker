@@ -114,6 +114,11 @@ public class FoodModel implements AdditionContract.Model.FoodModel, FoodDashboar
     }
 
     @Override
+    public void deleteFood(Food food) {
+
+    }
+
+    @Override
     public int insertFood(Food food){
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-MM-dd");
         String date = simpleDateFormat.format(new Date());

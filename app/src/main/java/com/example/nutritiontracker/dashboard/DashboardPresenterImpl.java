@@ -49,4 +49,14 @@ public class DashboardPresenterImpl implements DashboardContract.Presenter {
     public String initAddedCaloriesThisMonth() {
         return iModel.getThisMonthAddedCalories()+"";
     }
+
+    @Override
+    public String initBurnedCaloriesToday() {
+        return iModel.getTodayBurnedCalories()+"";
+    }
+
+    @Override
+    public String initBurnedCaloriesThisMonth() {
+        return iModel.getThisMonthBurnedCalories()+"";
+    }
 }
